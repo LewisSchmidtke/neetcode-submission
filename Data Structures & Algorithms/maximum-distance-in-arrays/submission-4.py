@@ -1,0 +1,12 @@
+class Solution:
+    def maxDistance(self, arrays: List[List[int]]) -> int:
+        res = 0
+        min1 = arrays[0][0]
+        max1 = arrays[0][-1]
+        for arr in arrays[1:]:
+            res = max(res, max1 - arr[0], arr[-1] - min1)
+            min1 = min(min1, arr[0])
+            max1 = max(max1, arr[-1])
+            
+
+        return res
